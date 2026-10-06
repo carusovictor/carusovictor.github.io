@@ -1,134 +1,1260 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en" data-lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Victor Caruso</title>
-    <meta name="description" content="Dev FrontEnd em progresso.">
-    <link rel="stylesheet" href="./css/style.min.css">
-    <link rel="icon" href="./favicon.svg" type="image/svg+xml">
 
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Victor Caruso — Information Systems student building a path into Data, programming and technology."
+    >
+
+    <meta
+        name="theme-color"
+        content="#080b09"
+    >
+
+    <title>Victor Caruso | Portfolio</title>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="./css/style.css"
+    >
 </head>
+
+
 <body>
-    <header class="header">
-        <img src="./img/marcaportfolio.svg" alt="caruso" width="247" height="98">
-        <nav>
-            <ul class="header-menu">
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#formacao">Formação</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main class="introducao">
-        <img src="./img/fotoportfolio.svg" alt="eu" width="315" height="315">
-        <div>
-            <h1>Front-End<br> Developer & <br>UI/UX Designer </h1>
-            <p>In Progress</p>
+
+<!-- =========================================================
+     LOADING SCREEN
+========================================================= -->
+
+<div
+    class="loader"
+    id="loader"
+    aria-hidden="true"
+>
+
+    <div class="loader-grid"></div>
+
+
+    <div class="loader-top">
+
+        <span>
+            VC / PORTFOLIO
+        </span>
+
+        <span>
+            FLIGHT VC001
+        </span>
+
+    </div>
+
+
+
+    <div class="flight-scene">
+
+
+        <!-- PIXEL AIRPLANE -->
+
+        <div
+            class="pixel-plane"
+            id="pixelPlane"
+            aria-hidden="true"
+        >
+
+            <div class="plane-tail"></div>
+
+            <div class="plane-body"></div>
+
+            <div class="plane-cockpit"></div>
+
+            <div class="plane-window window-one"></div>
+
+            <div class="plane-window window-two"></div>
+
+            <div class="plane-window window-three"></div>
+
+            <div class="plane-wing plane-wing-top"></div>
+
+            <div class="plane-wing plane-wing-bottom"></div>
+
+            <div class="plane-engine"></div>
+
+            <div class="plane-wheel plane-wheel-front"></div>
+
+            <div class="plane-wheel plane-wheel-back"></div>
+
         </div>
-    </main>
 
-    <section class="projetos" id="projetos" aria-label="projetos">
-        <h2 class="subtitulo">Projetos</h2>
-        <div>   
-            <p class="projetos-texto">Eu, Victor Caruso, desenvolvo projetos práticos durante meus estudos, 
-            utilizando <strong>HTML</strong> e <strong>CSS</strong> para criar interfaces 
-            modernas e bem estruturadas. 
-            Busco constantemente melhorar minhas habilidades e aplicar boas práticas no 
-            desenvolvimento <strong>front-end</strong>.</p>
 
-            <div class="nome">
-                <h3 class="nome-titulo">Página de Login</h3>
-                <p class="nome-texto">Interface desenvolvida com HTML e 
-                    CSS para prática de layout e estruturação.</p>
-                <ul class="nome-skill">
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>UI Design</li>
-                </ul>
-            </div>
 
-            <div class="nome">
-                <h3 class="nome-titulo">Landing Page</h3>
-                <p class="nome-texto">Projeto focado em organização visual e responsividade.</p>
-                <ul class="nome-skill">
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>UI Design</li>
-                </ul>
-            </div>
+        <!-- RUNWAY -->
+
+        <div class="runway">
+
+            <div class="runway-center"></div>
+
+            <div class="runway-lights"></div>
 
         </div>
-    </section>
 
-    <section class="formacao" id="formacao" aria-label="formação"> 
-        <div class="formacao-container">
-            <h2 class="subtitulo">Formação</h2>
+    </div>
 
-            <div>
-                <p class="formacao-texto">
-                    Estudante de <strong>Análise e Desenvolvimento de Sistemas</strong>,
-                    focado em evolução contínua e no desenvolvimento de 
-                    habilidades práticas em <strong>front-end</strong>.
+
+
+    <div class="loader-bottom">
+
+        <div class="loader-status">
+
+            <span id="loaderStatus">
+                INITIALIZING PORTFOLIO
+            </span>
+
+            <span id="loaderPercent">
+                0%
+            </span>
+
+        </div>
+
+
+        <div class="loader-progress">
+
+            <div
+                class="loader-progress-bar"
+                id="loaderProgressBar"
+            ></div>
+
+        </div>
+
+
+        <div class="loader-meta">
+
+            <span>
+                DESTINATION: DATA
+            </span>
+
+            <span>
+                STATUS: APPROACH
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     ACCESSIBILITY
+========================================================= -->
+
+<a
+    href="#main-content"
+    class="skip-link"
+>
+    Skip to content
+</a>
+
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="site-header">
+
+
+    <a
+        href="#home"
+        class="logo"
+        aria-label="Victor Caruso home"
+    >
+
+        <span class="logo-symbol">
+            VC
+        </span>
+
+        <span class="logo-name">
+            Victor Caruso
+        </span>
+
+    </a>
+
+
+
+    <!-- DESKTOP NAV -->
+
+    <nav
+        class="desktop-nav"
+        aria-label="Main navigation"
+    >
+
+        <a
+            href="#projects"
+            data-en="Projects"
+            data-pt="Projetos"
+        >
+            Projects
+        </a>
+
+
+        <a
+            href="#about"
+            data-en="About"
+            data-pt="Sobre"
+        >
+            About
+        </a>
+
+
+        <a
+            href="#contact"
+            data-en="Contact"
+            data-pt="Contato"
+        >
+            Contact
+        </a>
+
+
+        <a
+            class="github-nav"
+            href="https://github.com/carusovictor"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            GitHub ↗
+        </a>
+
+    </nav>
+
+
+
+    <div class="header-actions">
+
+
+        <button
+            type="button"
+            class="language-button"
+            id="languageButton"
+            aria-label="Mudar para português"
+        >
+            PT
+        </button>
+
+
+        <button
+            type="button"
+            class="menu-button"
+            id="menuButton"
+            aria-label="Open menu"
+            aria-expanded="false"
+        >
+
+            <span></span>
+            <span></span>
+
+        </button>
+
+    </div>
+
+
+
+    <!-- MOBILE NAV -->
+
+    <nav
+        class="mobile-nav"
+        id="mobileNav"
+        aria-label="Mobile navigation"
+        hidden
+    >
+
+        <a
+            href="#projects"
+            data-en="Projects"
+            data-pt="Projetos"
+        >
+            Projects
+        </a>
+
+
+        <a
+            href="#about"
+            data-en="About"
+            data-pt="Sobre"
+        >
+            About
+        </a>
+
+
+        <a
+            href="#contact"
+            data-en="Contact"
+            data-pt="Contato"
+        >
+            Contact
+        </a>
+
+
+        <a
+            href="https://github.com/carusovictor"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            GitHub ↗
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<main id="main-content">
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section
+    class="hero"
+    id="home"
+>
+
+    <div class="hero-texture"></div>
+
+
+    <div class="hero-status">
+
+        <span class="status-dot"></span>
+
+        <span
+            data-en="CURRENT STATUS / LEARNING"
+            data-pt="STATUS ATUAL / APRENDENDO"
+        >
+            CURRENT STATUS / LEARNING
+        </span>
+
+    </div>
+
+
+
+    <div class="hero-layout">
+
+
+        <div class="hero-main">
+
+
+            <p class="hero-code">
+                VC_001
+            </p>
+
+
+            <h1>
+
+                <span>
+                    VICTOR
+                </span>
+
+                <span>
+                    CARUSO
+                </span>
+
+            </h1>
+
+
+            <div class="hero-description">
+
+
+                <p
+                    class="hero-role"
+                    data-en="INFORMATION SYSTEMS STUDENT"
+                    data-pt="ESTUDANTE DE SISTEMAS DE INFORMAÇÃO"
+                >
+                    INFORMATION SYSTEMS STUDENT
                 </p>
 
-                <ul class="faculdade-lista">
-                    <li class="faculdade">
-                        <span class="faculdade-tipo">Tecnólogo</span>
-                        <h3 class="faculdade-curso">Análise e Desenvolvimento de Sistemas</h3>
-                        <span class="faculdade-instituicao">UniFacid</span>
-                    </li>
 
-                    <li class="faculdade">
-                        <span class="faculdade-tipo">Técnico</span>
-                        <h3 class="faculdade-curso">Técnico em Administração</h3>
-                        <span class="faculdade-instituicao">IFPI</span>
-                    </li>
+                <p
+                    class="hero-path"
+                    data-en="BUILDING MY PATH INTO"
+                    data-pt="CONSTRUINDO MINHA TRAJETÓRIA EM"
+                >
+                    BUILDING MY PATH INTO
+                </p>
 
-                </ul>
 
-                <div class="extra">
-                    <div class="cursos">
-                        <h3>Cursos Complementares</h3>
-                        <ul>
-                            <li>HTML & CSS  ( Andamento ) <span>23h</span></li>
-                            <li>Design  ( Andamento ) <span>11h</span></li>
-                            <li>C Programming <span>6h</span></li>
-                        </ul>
-                    </div>
+                <div class="hero-data">
 
-                    <div class="idiomas">
-                        <h3>Idiomas</h3>
-                        <ul>
-                            <li>Inglês / <span>Intermediário</span></li>
-                            <li>Português / <span>Nativo</span></li>
-                        </ul>
-                    </div>
+                    <span
+                        data-en="DATA"
+                        data-pt="DADOS"
+                    >
+                        DATA
+                    </span>
+
+                    <i
+                        class="terminal-cursor"
+                        aria-hidden="true"
+                    ></i>
+
                 </div>
 
             </div>
 
+
+
+            <div class="hero-actions">
+
+
+                <a
+                    href="#projects"
+                    class="main-button"
+                >
+
+                    <span
+                        data-en="VIEW PROJECTS"
+                        data-pt="VER PROJETOS"
+                    >
+                        VIEW PROJECTS
+                    </span>
+
+                    <span>
+                        ↓
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="https://github.com/carusovictor"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="simple-link"
+                >
+                    GITHUB ↗
+                </a>
+
+            </div>
+
         </div>
 
-    </section>
 
-    <footer class="footer" id="contato">
-        <div class="footer-container">
-            <p class="footer-texto">
-                Estou disponível para novos projetos e aprendizados.
-                 Para entrar em contato comigo, basta clicar nos links ao lado.
+
+        <!-- ROUTE -->
+
+        <aside class="hero-route">
+
+
+            <div class="route-heading">
+
+                <span
+                    data-en="CURRENT ROUTE"
+                    data-pt="ROTA ATUAL"
+                >
+                    CURRENT ROUTE
+                </span>
+
+                <span>
+                    2026
+                </span>
+
+            </div>
+
+
+
+            <div class="route-list">
+
+
+                <div class="route-stop">
+
+                    <span>
+                        01
+                    </span>
+
+                    <strong
+                        data-en="SYSTEMS ANALYSIS"
+                        data-pt="ANÁLISE DE SISTEMAS"
+                    >
+                        SYSTEMS ANALYSIS
+                    </strong>
+
+                </div>
+
+
+                <div class="route-line"></div>
+
+
+                <div class="route-stop">
+
+                    <span>
+                        02
+                    </span>
+
+                    <strong
+                        data-en="PROGRAMMING"
+                        data-pt="PROGRAMAÇÃO"
+                    >
+                        PROGRAMMING
+                    </strong>
+
+                </div>
+
+
+                <div class="route-line"></div>
+
+
+                <div class="route-stop active">
+
+                    <span>
+                        03
+                    </span>
+
+                    <strong>
+                        DATA
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="route-footer">
+
+                <span>
+                    LEARNING
+                </span>
+
+                <span class="route-online">
+                    ONLINE
+                </span>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+
+
+    <div class="hero-bottom">
+
+        <span>
+            PORTFOLIO / 2026
+        </span>
+
+        <span>
+            SCROLL ↓
+        </span>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+<!-- =========================================================
+ABOUT
+========================================================= -->
+
+<section
+    class="section about"
+    id="about"
+>
+
+
+    <header class="section-header">
+        
+
+        <span class="section-number">
+            02
+        </span>
+        
+
+        <div>
+
+            <span
+                class="section-label"
+                data-en="/ PROFILE"
+                data-pt="/ PERFIL"
+            >
+                / PROFILE
+            </span>
+
+
+            <h2
+                data-en="ABOUT"
+                data-pt="SOBRE"
+            >
+            ABOUT
+            </h2>
+            
+        </div>
+
+    </header>
+
+    
+    
+    <div class="about-layout">
+
+        <div class="about-statement">
+            
+            <p
+            data-en="I'm a Information Systems student building my professional path toward Data and technology."
+            data-pt="Sou estudante de Sistemas de Informação e estou construindo minha trajetória profissional em direção à área de Dados e tecnologia."
+            >
+            I'm a Information Systems student building my
+            professional path toward Data and technology.
+        </p>
+        
+    </div>
+    
+    
+    <div class="about-photo-wrap">
+        
+        <div class="about-photo-frame">
+
+            <img
+                src="C:\Users\victo\OneDrive\Imagens\me.jpg"
+                alt="Victor Caruso"
+                class="about-photo"
+                >
+                
+                <div class="about-photo-label">
+                    <span>VC / PROFILE</span>
+                <span>2026</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    
+    <div class="about-details">
+        
+        <p
+        data-en="My portfolio documents what I am learning through practical projects. I started with programming and web development fundamentals and I am gradually expanding my studies toward data analysis."
+        data-pt="Meu portfólio registra aquilo que estou aprendendo através de projetos práticos. Comecei pelos fundamentos de programação e desenvolvimento web e estou ampliando gradualmente meus estudos para análise de dados."
+        >
+        My portfolio documents what I am learning through
+        practical projects. I started with programming and web
+        development fundamentals and I am gradually expanding
+        my studies toward data analysis.
+    </p>
+    
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     PROJECTS
+========================================================= -->
+
+<section
+    class="section projects"
+    id="projects"
+>
+
+
+    <header class="section-header">
+
+
+        <span class="section-number">
+            01
+        </span>
+
+
+        <div>
+
+            <span
+                class="section-label"
+                data-en="/ FLIGHT LOG"
+                data-pt="/ REGISTRO"
+            >
+                / FLIGHT LOG
+            </span>
+
+
+            <h2
+                data-en="PROJECTS"
+                data-pt="PROJETOS"
+            >
+                PROJECTS
+            </h2>
+
+        </div>
+
+    </header>
+
+
+
+    <div
+        class="projects-list"
+        id="projectsList"
+    ></div>
+
+</section>
+
+<!-- =========================================================
+     EDUCATION / JOURNEY
+========================================================= -->
+
+<section
+    class="section journey"
+    id="journey"
+>
+
+
+    <header class="section-header">
+
+
+        <span class="section-number">
+            03
+        </span>
+
+
+        <div>
+
+            <span
+                class="section-label"
+                data-en="/ EDUCATION LOG"
+                data-pt="/ FORMAÇÃO"
+            >
+                / EDUCATION LOG
+            </span>
+
+
+            <h2
+                data-en="JOURNEY"
+                data-pt="TRAJETÓRIA"
+            >
+                JOURNEY
+            </h2>
+
+        </div>
+
+    </header>
+
+
+
+    <div class="timeline">
+
+
+        <article class="timeline-item">
+
+
+            <span class="timeline-id">
+                EDU_01
+            </span>
+
+
+            <div class="timeline-content">
+
+
+                <span
+                    class="timeline-type"
+                    data-en="UNDERGRADUATE DEGREE"
+                    data-pt="GRADUAÇÃO"
+                >
+                    UNDERGRADUATE DEGREE
+                </span>
+
+
+                <h3
+                    data-en="Information Systems"
+                    data-pt="Sistemas de Informação"
+                >
+                    Information Systems
+                </h3>
+
+
+                <p>
+                    Instituto Federal do Sul De Minas
+                </p>
+
+            </div>
+
+
+            <span
+                class="timeline-status"
+                data-en="IN PROGRESS"
+                data-pt="EM ANDAMENTO"
+            >
+                IN PROGRESS
+            </span>
+
+        </article>
+
+    </div>
+
+
+
+    <!-- COURSES -->
+
+    <div class="courses">
+
+
+        <div class="courses-heading">
+
+            <span
+                data-en="ADDITIONAL COURSES"
+                data-pt="CURSOS COMPLEMENTARES"
+            >
+                ADDITIONAL COURSES
+            </span>
+
+            <span>
+                +++
+            </span>
+
+        </div>
+
+
+
+        <div class="course-row">
+
+            <strong>
+                FUNDAMENTALS OF DATA ENGINEERING - DATA SCIENCE ACADEMY
+            </strong>
+
+            <span
+                data-en="IN PROGRESS"
+                data-pt="EM ANDAMENTO"
+            >
+                IN PROGRESS
+            </span>
+
+            <span>
+                24H
+            </span>
+
+        </div>
+
+
+
+        <div class="course-row">
+
+            <strong>
+                INTRODUCTION TO DATA ANALYSIS - FUNDAÇÃO BRADESCO
+            </strong>
+
+            <span
+                data-en="COMPLETED"
+                data-pt="COMPLETADO"
+            >
+                COMPLETED
+            </span>
+
+            <span>
+                5H
+            </span>
+
+        </div>
+
+
+
+        <div class="course-row">
+
+            <strong>
+                SQL - UDEMY
+            </strong>
+
+            <span
+                data-en="COMPLETED"
+                data-pt="CONCLUÍDO"
+            >
+                COMPLETED
+            </span>
+
+            <span>
+                6H
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     STACK
+========================================================= -->
+
+<section
+    class="section stack"
+    id="stack"
+>
+
+
+    <header class="section-header">
+
+
+        <span class="section-number">
+            04
+        </span>
+
+
+        <div>
+
+            <span class="section-label">
+                / TOOLBOX
+            </span>
+
+
+            <h2
+                data-en="STACK"
+                data-pt="TECNOLOGIAS"
+            >
+                STACK
+            </h2>
+
+        </div>
+
+    </header>
+
+
+
+    <div class="stack-grid">
+
+    <article>
+
+        <span>
+            01
+        </span>
+
+        <h3>
+            Python
+        </h3>
+
+        <p
+            data-en="Programming fundamentals, automation and data-oriented development."
+            data-pt="Fundamentos de programação, automação e desenvolvimento voltado para dados."
+        >
+            Programming fundamentals, automation and data-oriented development.
+        </p>
+
+    </article>
+
+
+
+    <article>
+
+        <span>
+            02
+        </span>
+
+        <h3>
+            SQL
+        </h3>
+
+        <p
+            data-en="Queries, relational databases, data retrieval and organization."
+            data-pt="Consultas, bancos de dados relacionais, recuperação e organização de dados."
+        >
+            Queries, relational databases, data retrieval and organization.
+        </p>
+
+    </article>
+
+
+
+    <article>
+
+        <span>
+            03
+        </span>
+
+        <h3>
+            C#
+        </h3>
+
+        <p
+            data-en="Object-oriented programming and application development fundamentals."
+            data-pt="Programação orientada a objetos e fundamentos de desenvolvimento de aplicações."
+        >
+            Object-oriented programming and application development fundamentals.
+        </p>
+
+    </article>
+
+
+
+    <article>
+
+        <span>
+            04
+        </span>
+
+        <h3>
+            React
+        </h3>
+
+        <p
+            data-en="Component-based interfaces, state management and modern front-end development."
+            data-pt="Interfaces baseadas em componentes, gerenciamento de estado e desenvolvimento front-end moderno."
+        >
+            Component-based interfaces, state management and modern front-end development.
+        </p>
+
+    </article>
+
+</div>
+
+
+
+    <!-- LANGUAGES -->
+
+    <div class="languages">
+
+
+        <div class="languages-title">
+            LANGUAGES
+        </div>
+
+
+        <div class="languages-list">
+
+
+            <div class="language">
+
+                <strong
+                    data-en="Portuguese"
+                    data-pt="Português"
+                >
+                    Portuguese
+                </strong>
+
+                <span
+                    data-en="Native"
+                    data-pt="Nativo"
+                >
+                    Native
+                </span>
+
+            </div>
+
+
+
+            <div class="language">
+
+                <strong
+                    data-en="English"
+                    data-pt="Inglês"
+                >
+                    English
+                </strong>
+
+                <span
+                    data-en="Intermediate"
+                    data-pt="Intermediário"
+                >
+                    Intermediate
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section
+    class="contact"
+    id="contact"
+>
+
+
+    <div class="contact-label">
+
+        <span>
+            05
+        </span>
+
+        <span
+            data-en="/ NEXT DESTINATION"
+            data-pt="/ PRÓXIMO DESTINO"
+        >
+            / NEXT DESTINATION
+        </span>
+
+    </div>
+
+
+
+    <div class="contact-content">
+
+
+        <h2
+            data-en="LET'S BUILD SOMETHING."
+            data-pt="VAMOS CONSTRUIR ALGO."
+        >
+            LET'S BUILD SOMETHING.
+        </h2>
+
+
+
+        <div class="contact-bottom">
+
+
+            <p
+                data-en="I'm still learning, experimenting and building. If you want to talk about technology, projects or opportunities, get in touch."
+                data-pt="Ainda estou aprendendo, experimentando e construindo. Se quiser conversar sobre tecnologia, projetos ou oportunidades, entre em contato."
+            >
+                I'm still experimenting and building.
+                If you want to talk about technology, projects
+                or opportunities, get in touch.
             </p>
-            <ul class="footer-contato">
-                <li>Email: victor20171111@gmail.com</li>
-                <li><a href="https://www.instagram.com/carusovictorz/">@carusovictorz</a></li>
-            </ul>
+
+
+
+            <div class="contact-links">
+
+
+                <a
+                    href="mailto:victor20171111@gmail.com"
+                >
+                    EMAIL ↗
+                </a>
+
+
+                <a
+                    href="https://github.com/carusovictor"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    GITHUB ↗
+                </a>
+
+
+                <a
+                    href="https://www.instagram.com/carusovictorz/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    INSTAGRAM ↗
+                </a>
+
+            </div>
+
         </div>
+
+    </div>
+
+
+
+    <footer class="site-footer">
+
+
+        <span>
+            ©
+            <span id="year"></span>
+            VICTOR CARUSO
+        </span>
+
+
+        <span>
+            BRAZIL
+        </span>
+
+
+        <span>
+            BUILT FROM SCRATCH
+        </span>
 
     </footer>
 
+</section>
+
+
+
+<!-- =========================================================
+     PROJECT PREVIEW
+========================================================= -->
+
+<dialog
+    class="project-dialog"
+    id="projectDialog"
+>
+
+
+    <div class="dialog-header">
+
+
+        <div>
+
+            <span>
+                LIVE PREVIEW
+            </span>
+
+            <strong id="dialogTitle">
+                PROJECT
+            </strong>
+
+        </div>
+
+
+
+        <button
+            type="button"
+            id="closeDialog"
+            aria-label="Close preview"
+        >
+            CLOSE ×
+        </button>
+
+    </div>
+
+
+
+    <div
+        class="dialog-content"
+        id="dialogContent"
+    ></div>
+
+</dialog>
+
+
+
+<script src="./js/script.js"></script>
+
 </body>
+
 </html>
